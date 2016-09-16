@@ -45,3 +45,7 @@ group :development do
   gem 'spring'
 end
 
+# 追加
+gem "haml-rails"
+gem "erb2haml"
+
