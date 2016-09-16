@@ -29,7 +29,7 @@ Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
 == DATABASE
-* USER *
+* USER
 
 association
 has_many :comments, :prototypes, :likes
@@ -42,7 +42,7 @@ table
 ・text   :profile
 ・string :works
 
-* PROTOTYPE *
+* PROTOTYPE
 
 association
 has_many :likes, :capturedlimages, :comments
@@ -54,7 +54,7 @@ table
 ・string   :concept
 ・integer  :user_id
 
-* CAPTUREDIMAGE *
+* CAPTUREDIMAGE
 
 association
 belongs_to :prototype
@@ -72,7 +72,7 @@ table
 ・integer :user_id
 ・integer :prototype_id
 
-* COMMENT *
+* COMMENT
 
 association
 belongs_to :user, :prototype
