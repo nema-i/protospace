@@ -48,4 +48,5 @@ end
 # 追加
 gem "haml-rails"
 gem "erb2haml"
-
+# bootstrap-sass
+gem "bootstrap-sass"
