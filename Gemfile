@@ -45,8 +45,10 @@ group :development do
   gem 'spring'
 end
 
-# 追加
+# haml
 gem "haml-rails"
 gem "erb2haml"
 # bootstrap-sass
 gem "bootstrap-sass"
+# devise
+gem "devise"
