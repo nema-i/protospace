@@ -10,7 +10,8 @@
             = f.text_field :name, placeholder: "Username"
 
           .user-image.col-md-2
-            = f.button :avatar, type: 'file', class: 'btn btn-primary', value: 'Add image'
+            = f.file_field :avatar, type: 'file', id: 'user_avatar', class: 'media-object'
+            %button.btn.btn-primary Add image
           .user-email.col-md-10
             = f.email_field :email, placeholder: "E-Mail"
           .user-password.col-md-10
