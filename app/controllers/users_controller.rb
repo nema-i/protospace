@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(update_params)
+    flash[:notice] = 'Mypage Update'
     redirect_to root_path
   end
 
