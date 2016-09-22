@@ -52,3 +52,5 @@ gem "erb2haml"
 gem "bootstrap-sass"
 # devise
 gem "devise"
+# carrierwave
+gem 'carrierwave'
