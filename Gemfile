@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use mysql as the database for Active Record
@@ -54,3 +53,5 @@ gem "bootstrap-sass"
 gem "devise"
 # carrierwave
 gem 'carrierwave'
+# pry-rails
+gem 'pry-rails'
