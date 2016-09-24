@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :name, :member, :profile, :works
-  # carrierwave
-  mount_uploader :avatar, AvatarUploader
   has_many :prototypes
+
+  mount_uploader :avatar, AvatarUploader
 end
