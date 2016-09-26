@@ -1,10 +1,13 @@
 class PrototypesController < ApplicationController
+  before_action :set_prototype, only: :show
 
   def index
+    @prototypes = Prototype.all
   end
 
   def show
-
+    @prototype_user = @prototype.user
+    @sub_images = @prototype.capturedimages.sub
   end
 
   def new
@@ -26,6 +29,10 @@ class PrototypesController < ApplicationController
 
   def create_params
     params.require(:prototype).permit(:title, :catchcopy, :concept, capturedimages_attributes: [:prototype_id, :image, :role]).merge(user_id: current_user.id)
+  end
+
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
   end
 
 end
