@@ -21,24 +21,9 @@
             %h4 Works
             %p
               = @user.works
-- @user_prototypes.each do |user_prototype|
-  .container.proto-list
-    .row
-      .col-sm-4.col-md-3.proto-content
-        .thumbnail
-          = link_to prototype_path(user_prototype) do
-            = image_tag user_prototype.capturedimages.first.image
-            .caption
-              %h3
-                = user_prototype.title
-              .proto-meta
-                .proto-date
-                  Apr 26
-              %ul.proto-tag-list.list-inline
-                %li
-                  %a{href: "#", class: "btn btn-default"} iPad
-                %li
-                  %a{href: "#", class: "btn btn-default"} wireframe
+.container.proto-list
+  .row
+    = render "userprototype"
 
 .text-center
   %ul.pagination
