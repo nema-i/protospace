@@ -23,7 +23,7 @@
               = @user.works
 .container.proto-list
   .row
-    = render "userprototype"
+    = render partial: "layouts/prototypes", collection: @user_prototypes
 
 .text-center
   %ul.pagination
