@@ -56,3 +56,5 @@ gem "bootstrap-sass"
 gem "devise"
 # carrierwave
 gem 'carrierwave'
+# kaminari
+gem 'kaminari'
