@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: :show
+  before_action :set_prototype, only: [:show, :destroy, :update, :edit]
 
   def index
     @prototypes = Prototype.includes(:user)
@@ -25,10 +25,40 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    if @prototype.user_id == current_user.id
+        @prototype.update(update_params)
+        flash[:success] = "Prototype was successfully updated."
+        redirect_to root_path
+    else
+        flash[:error] = @prototype.errors.full_messages
+        redirect_to edit_prototype_path
+    end
+  end
+
+  def destroy
+    if @prototype.user_id == current_user.id
+        @prototype.destroy
+        flash[:success] = "Prototype was successfully deleted."
+        redirect_to root_path
+    else
+        flash[:error] = @prototype.errors.full_messages
+        redirect_to root_path
+    end
+  end
+
   private
 
   def create_params
     params.require(:prototype).permit(:title, :catchcopy, :concept, capturedimages_attributes: [:prototype_id, :image, :role]).merge(user_id: current_user.id)
+  end
+
+  def update_params
+    params.require(:prototype).permit(:title, :catchcopy, :concept, capturedimages_attributes: [:id, :image, :role])
   end
 
   def set_prototype
