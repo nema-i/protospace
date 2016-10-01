@@ -30,16 +30,24 @@ class PrototypesController < ApplicationController
   end
 
   def update
-    if @prototype.update(update_params)
-      flash[:success] = "Prototype was successfully updated."
-      redirect_to root_path
+    if @prototype.user_id == current_user.id
+        @prototype.update(update_params)
+        flash[:success] = "Prototype was successfully updated."
+        redirect_to root_path
+    else
+        flash[:error] = @prototype.errors.full_messages
+        redirect_to edit_prototype_path
     end
   end
 
   def destroy
-    if @prototype.destroy
-      flash[:success] = "Prototype was successfully deleted."
-      redirect_to root_path
+    if @prototype.user_id == current_user.id
+        @prototype.destroy
+        flash[:success] = "Prototype was successfully deleted."
+        redirect_to root_path
+    else
+        flash[:error] = @prototype.errors.full_messages
+        redirect_to root_path
     end
   end
 
