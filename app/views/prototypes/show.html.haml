@@ -14,10 +14,8 @@
             %span.degree we-b inc. Designer
 
     .col-md-6.text-right
-      %button.btn.btn-default
-        = image_tag("icon_heart.svg")
-        Like
-        %span.num 20
+      #likes-box
+        = render partial: "likes/like", locals: {prototype: @prototype, likes: @likes}
   .row
     .col-md-9
       = image_tag @prototype.capturedimages.first.image, class: "img-responsive"
