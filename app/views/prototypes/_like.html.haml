@@ -1,0 +1,18 @@
+- if user_signed_in?
+  - if prototype.like_user(current_user.id)
+    = button_to prototype_like_path(prototype.likes, prototype_id: prototype.id), method: :delete, class: "btn btn-default decrement-button", remote: true do
+      = image_tag("icon_heart_red.svg")
+      Like
+      %span#like-sum.num
+        = prototype.likes.count
+  - else
+    = button_to prototype_likes_path(prototype), class: "btn btn-default increment-button", remote: true do
+      = image_tag("icon_heart.svg")
+      Like
+      %span#like-sum.num
+        = prototype.likes.count
+- else
+  = image_tag("icon_heart.svg")
+  Like
+  %span#like-sum.num
+    = prototype.likes.count
