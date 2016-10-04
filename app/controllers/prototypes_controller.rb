@@ -8,7 +8,6 @@ class PrototypesController < ApplicationController
   def show
     @prototype_user = @prototype.user
     @sub_images = @prototype.capturedimages.sub
-    @likes = Like.where(prototype_id: params[:id])
   end
 
   def new
