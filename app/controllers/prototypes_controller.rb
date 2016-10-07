@@ -8,6 +8,7 @@ class PrototypesController < ApplicationController
   def show
     @prototype_user = @prototype.user
     @sub_images = @prototype.capturedimages.sub
+    @comment = Comment.new
   end
 
   def new
