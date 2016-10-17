@@ -2,6 +2,7 @@ class Prototype < ActiveRecord::Base
   belongs_to :user
   has_many :capturedimages, dependent: :delete_all
   has_many :likes, dependent: :delete_all
+  has_many :comments
 
   accepts_nested_attributes_for :capturedimages, allow_destroy: true
 
