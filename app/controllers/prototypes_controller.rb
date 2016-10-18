@@ -2,7 +2,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :destroy, :update, :edit]
 
   def index
-    @prototypes = Prototype.includes(:user).page(params[:page]).per(8)
+    @prototypes = Prototype.order("likes_count DESC").page(params[:page]).per(8)
   end
 
   def show
