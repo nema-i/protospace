@@ -1,0 +1,22 @@
+= render 'layouts/main'
+
+.container
+  .row
+    .tag-header
+      - @prototypes.each do |prototype|
+        .col-sm-4.col-md-3.proto-content
+          .thumbnail
+            = link_to prototype_path(prototype) do
+              = image_tag prototype.capturedimages.first.image
+            .caption
+              %h3
+                = prototype.title
+              .proto-meta
+                .proto-user
+                  = link_to prototype.user.name, user_path(prototype.user_id)
+                .proto-posted
+                  Jun 28 Tue
+              %ul.proto-tag-list.list-inline
+                - prototype.tags.each do |tag|
+                  %li
+                    = link_to tag.name, tag_path(tag.name), class: "btn btn-default"
