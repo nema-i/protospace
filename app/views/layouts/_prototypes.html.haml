@@ -7,6 +7,13 @@
         %li
           = link_to "Delete", prototype_path(prototypes), method: :delete
           = link_to "Edit", edit_prototype_path(prototypes)
+  .dropdown.drop_menu_location
+    %button.btn.btn-default.dropdown-toggle{ type: "button", "data-toggle" => "dropdown", id: "dropdownMenu"}
+      ACTION
+    %ul.dropdown-menu{ area: { labelledby: "dropdownMenu1" } }
+      %li
+        = link_to "Delete", prototype_path(prototypes), method: :delete
+        = link_to "Edit", edit_prototype_path(prototypes)
   .thumbnail
     = link_to prototype_path(prototypes) do
       = image_tag prototypes.capturedimages.first.image
@@ -19,7 +26,6 @@
           .proto-posted
             = prototypes.created_at
         %ul.proto-tag-list.list-inline
-          %li
-            %a{href: "#", class: "btn btn-default"} iPad
-          %li
-            %a{href: "#", class: "btn btn-default"} wireframe
+          - prototypes.tags.each do |tag|
+            %li
+              = link_to tag.name, tag_path(tag.name), class: "btn btn-default"
