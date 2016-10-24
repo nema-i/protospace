@@ -58,3 +58,5 @@ gem "devise"
 gem 'carrierwave'
 # kaminari
 gem 'kaminari'
+# acts-as-taggable-on
+gem 'acts-as-taggable-on', '~> 4.0'
