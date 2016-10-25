@@ -60,3 +60,9 @@ gem 'carrierwave'
 gem 'kaminari'
 # acts-as-taggable-on
 gem 'acts-as-taggable-on', '~> 4.0'
+# fog
+gem 'fog'
+# dotenv-rails
+gem 'dotenv-rails'
+# config
+gem 'config'
